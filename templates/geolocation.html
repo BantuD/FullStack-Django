@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatival", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Geo Location</title>
+
+    </head>
+    <body>
+        <button onclick="getGeoLocation()">click me</button>
+        <div id="location">
+            <h1>Check 1,2,3....</h1>
+        </div>
+    </body>
+    
+    <script>
+    document.getElementById("location").innerHTML="hello"
+    
+    function getGeoLocation(){
+        alert("Get geo Location")
+
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition,showError);
+        }
+        else{
+            document.getElementById("location").innerHTML="Geo location is not supported by browser"
+
+        }
+    }
+
+    function showPosition(position){
+        document.getElementById("location").innerHTML="latitude" + position.coords.latitude +"<br>"+"longtitude" + position.coords.longitude
+    }
+
+    function showError(error){
+        document.getElementById("location").innerHTML="Error: "+error
+    }
+
+    </script>
+</html>

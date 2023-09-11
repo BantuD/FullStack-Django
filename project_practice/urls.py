@@ -23,6 +23,7 @@ urlpatterns = [
     path('about',views.aboutUs),
     path('html/',views.htmlResponse),
     path('<int:courseId>',views.dynamicRequest),
-    path('animation',views.htmlAnimation)
+    path('animation',views.htmlAnimation),
+    path('geolocation',views.getGeolocation)
 
 ]

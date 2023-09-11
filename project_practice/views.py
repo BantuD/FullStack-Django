@@ -18,3 +18,6 @@ def dynamicRequest(request,courseId):
 
 def htmlAnimation(request):
     return render(request,"bouncingBall-fullstack.html")
+
+def getGeolocation(request):
+    return render(request,"geolocation.html")
