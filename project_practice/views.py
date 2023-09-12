@@ -21,3 +21,6 @@ def htmlAnimation(request):
 
 def getGeolocation(request):
     return render(request,"geolocation.html")
+
+def dragDrop(request):
+    return render(request,"dragdrop.html")
