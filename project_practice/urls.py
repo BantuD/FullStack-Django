@@ -26,5 +26,6 @@ urlpatterns = [
     path('animation',views.htmlAnimation),
     path('geolocation',views.getGeolocation),
     path('dragdrop',views.dragDrop),
-    path('fileinputapi',views.fileInputAPI)
+    path('fileinputapi',views.fileInputAPI),
+    path("localstorageapi",views. localStoarageAPI)
 ]

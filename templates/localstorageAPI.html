@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatival", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Storage</title>
+
+    </head>
+    <body>
+      <input type="text" placeholder="Enter product name" id="pName">
+      <input type="number" placeholder="Enter product price" id="price">
+      <button onclick="addToCart()" type="reset">Add to cart</button>   
+      <div id="display"></div>    
+    </body>
+    <script>
+        function showCart(){
+            cart=localStorage.getItem("cart")
+            cart=JSON.parse(cart)
+            console.log("cart is ",cart)
+
+            if(cart==null)
+            {
+                document.getElementById("display").innerHTML="Cart is empty"
+            }
+            let table = "<table border=1>"
+                table+="<tr>"+"<th>"+"Product Name"+"</th>"
+                table+="<th>"+"Product Price"+"</th>"+"</tr>"
+
+                for(let i=0;i<cart.length;i++)
+                {
+                    table+="<tr>"+"<td>"+cart[i].name+"</td>"+"<td>"+cart[i].price+"</td>"+"</tr>"
+                }
+            
+                document.getElementById("display").innerHTML=table
+
+
+        }
+
+        function addToCart(){
+            let cart = localStorage.getItem("cart")
+            //let cart = sessionStorage.getItem("cart")
+            if(cart==null){
+                cart=[]
+            }
+            else{
+                cart=JSON.parse(cart)
+            }
+
+           let productname = document.getElementById("pName").value
+           let productprice = document.getElementById("price").value
+           let product={
+            name:productname,
+            price:productprice
+           }
+           
+           cart.push(product)
+           localStorage.setItem("cart",JSON.stringify(cart))
+           console.log(cart);
+           showCart();
+        }
+
+        showCart();
+    </script>
+</html>
+    

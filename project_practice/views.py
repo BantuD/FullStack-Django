@@ -27,3 +27,6 @@ def dragDrop(request):
 
 def fileInputAPI(request):
     return render(request,"fileInputAPI.html")
+
+def localStoarageAPI(request):
+    return render(request,"localstorageAPI.html")
