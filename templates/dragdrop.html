@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        width:500px;
+        height:500px;
+        border: 1px solid black;
+    }
+    img{
+        padding:10px;
+        width:200px;
+        height200px;
+    }
+</style>
+<body>
+    <div id="container" ondragover="onDrag(event)" ondrop="drop(event)"></div>
+    <br>
+    <img src="4.jpg" id="myimage" alt="image" draggable="true" ondragstart="drag(event)">
+</body>
+<script>
+    function onDrag(e){
+        e.preventDefault();
+    }
+    function drag(e){
+        e.dataTransfer.setData("myimagetotransfer",e.target.id);
+    }
+    function drop(e){
+        e.preventDefault();
+       const data = e.dataTransfer.getData("myimagetotransfer");
+        e.target.appendChild(document.getElementById(data));
+    }
+</script>
+</html>

@@ -16,27 +16,20 @@
     </body>
     
     <script>
-    document.getElementById("location").innerHTML="hello"
-    
-    function getGeoLocation(){
-        alert("Get geo Location")
-
-        if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(showPosition,showError);
+        function getGeoLocation(){
+            alert("Getting Geo Location");
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition,showError);
+            }
+            else{
+                document.getElementById("location").innerHTML="Geo location not supported by browser"
+            }
         }
-        else{
-            document.getElementById("location").innerHTML="Geo location is not supported by browser"
-
+        function showPosition(position){
+            document.getElementById("location").innerHTML="latitude: "+position.coords.latitude+ "<br>" + "logitude: "+position.coords.longitude
         }
-    }
-
-    function showPosition(position){
-        document.getElementById("location").innerHTML="latitude" + position.coords.latitude +"<br>"+"longtitude" + position.coords.longitude
-    }
-
-    function showError(error){
-        document.getElementById("location").innerHTML="Error: "+error
-    }
-
+        function showError(error){
+            document.getElementById("location").innerHTML="Error: "+error
+        }
     </script>
 </html>
