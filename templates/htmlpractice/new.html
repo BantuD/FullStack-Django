@@ -7,16 +7,29 @@
     <title>Table</title>
 </head>
 <style>
-    table{width: 100%;border-collapse: collapse;}
-    th{color: aqua;border: 1pxsolid blue;font-size: 20px;}
-    td{color: blueviolet;font-size: 10px;text-align: center;border: 1px solid blue;}
-    thead{background-color: antiquewhite;}
-    table#alter thead {background-color: aquamarine;}
-    table#alter tbody tr :nth-child(even){background-color: beige;}
-    table#alter tbody tr :nth-child(odd){background-color: blanchedalmond;}
+    
 </style>
 <body>
-
-    <input type='button' value='click me' onclick='alert(you are hacked)'>
+    <button onclick="getGeoLocation()">Click me</button>
+    <br>
+    <div id="location"></div>
 </body>
+<script>
+    function getGeoLocation(){
+        alert("getting user location")
+
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition,showError)
+        }
+        else{
+            document.getElementById("location").innerHTML="Location is not supported by the browser"
+        }
+    }
+    function showPosition(position){
+        document.getElementById("location").innerHTML="Altitude"+position.coords.altitude+"<br>"+"longitude"+position.coords.longitude
+    }
+    function showError(error){
+        document.getElementById("location").innerHTML="Error: "+error
+    }
+</script>
 </html>

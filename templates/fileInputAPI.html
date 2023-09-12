@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatival" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>File input API</title>
+    </head>
+    <body>
+        <input type="file" id="myfile" onchange="displayFileData()">
+        <div id="output"></div>
+    </body>
+    <script>
+        function displayFileData(){
+            alert("Show file details")
+        var filesInput = document.getElementById("myfile")
+        var filedata = filesInput.files[0]
+        console.log(filedata)
+        document.getElementById("output").innerHTML="name: "+filedata.name+"<br>"+
+        "Last modified "+filedata.lastModifiedDate+"<br>"+"size: "+filedata.size
+        }
+    </script>

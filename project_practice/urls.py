@@ -25,5 +25,6 @@ urlpatterns = [
     path('<int:courseId>',views.dynamicRequest),
     path('animation',views.htmlAnimation),
     path('geolocation',views.getGeolocation),
-    path('dragdrop',views.dragDrop)
+    path('dragdrop',views.dragDrop),
+    path('fileinputapi',views.fileInputAPI)
 ]

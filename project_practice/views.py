@@ -24,3 +24,6 @@ def getGeolocation(request):
 
 def dragDrop(request):
     return render(request,"dragdrop.html")
+
+def fileInputAPI(request):
+    return render(request,"fileInputAPI.html")
