@@ -1,0 +1,75 @@
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset='UTF-8'>
+            <meta http-equiv="X-UA-Compatival" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title> Flex Praticing </title>
+        </head>
+        <style>
+            *{
+                margin:0px;
+                padding:0px;
+            }
+            .container{
+               margin:20px;
+               width:800px;
+               border: 1px solid black;
+               height:400px;
+               display: grid;
+               grid-gap:2px;
+               grid-template-columns: 1fr 3fr ;
+               grid-auto-columns: 500px;
+               grid-template-areas:
+               "header"
+               "sidebar"
+               "content"
+               "footer"
+            }
+            .item{
+                padding:10px;
+                color: #fff;
+                font-size: 30px;
+            }
+            .header{
+                grid-area:header;
+                background-color:red;
+            }
+            .sidebar{
+                background-color:green;
+            }
+            .content{
+                background-color:pink;
+            }
+            .footer{
+                background-color: orange;
+            }
+            @media (max-width:768px)
+            {
+                .container{
+                    margin:20px;
+                    width:800px;
+                    border: 1px solid black;
+                    height:400px;
+                    display: grid;
+                    grid-gap:2px;
+                    grid-template-columns: 1fr;
+                    grid-template-areas:
+                    "header" 
+                    "sidebar"
+                    "content"
+                    "footer"
+                 }
+            }
+
+        </style>
+        <body>
+            <div class="container">
+                <div class="item header"> header </div>
+                <div class="item sidebar"> sidebar </div>
+                <div class="item content">content</div>
+                <div class="item footer">footer</div>
+                
+            </div>
+        </body>
+    </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .hover-button{
+        border-radius: 5px;
+        border:none;
+        font-size: 15px;
+    }
+    .hover-button:hover{
+        background-color: aqua;
+        font-size: 20px;
+        /* scale: 1.5; */
+        transform: translate(30px, 30px) scale(1.5) rotateY(180deg);
+        /* rotate: 45deg; */
+        transition: all 2.5s ease-in-out;
+    }
+</style>
+<body>
+    <button class="hover-button">Hover me!</button>
+</body>
+</html>
